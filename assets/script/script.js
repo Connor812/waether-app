@@ -1,4 +1,4 @@
-place = prompt("Enter location: ");;
+// place = prompt("Enter City name: ");
 let weatherUrl;
 let locationUrl;
 let lan;
