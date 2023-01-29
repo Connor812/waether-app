@@ -52,7 +52,7 @@ function getCurrentWeatherUrl() {
         .then(function (currentWeatherData) {
             console.log(currentWeatherData);
             $('#city').text(currentWeatherData.name); 
-            console.log(currentWeatherData.name);
+            
             let weatherIcon = "http://openweathermap.org/img/w/" + currentWeatherData.weather[0].icon + ".png";
             $('#icon').attr('src', weatherIcon);
             console.log(currentWeatherData.weather[0].icon);
@@ -60,7 +60,7 @@ function getCurrentWeatherUrl() {
             console.log(currentWeatherData.main.temp);
             $('#current-wind').text(currentWeatherData.wind.speed);
             console.log(currentWeatherData.wind.speed);
-            $('#current-humidity').text(currentWeatherData.main.humidity)
+            $('#current-humidity').text(currentWeatherData.main.humidity + "%");
             console.log(currentWeatherData.main.humidity);
 
             
@@ -96,7 +96,16 @@ function getWeatherUrl() {
 }
 
 function renderForcast() {
-    for (let i = 0; i < days.length;) {
+
+    
+
+
+
+
+
+
+
+    for (let i = 1; i < days.length;) {
         console.log(i);
         console.log(days[i]);
         i = i + 8;
