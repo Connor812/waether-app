@@ -18,53 +18,57 @@
 
 
     <div class="row">
-        <div class="col-3 border border-dark">
+        <div class="col-3">
             <div class="fs-3 fw-bold">Search for a City:</div>
-            <div><input class="border border-dark form-control m-1 mt-2" placeholder="City"></div>
-            <div><button class=" btn btn-primary form-control m-1 mt-2">Submit</button></div>
+            <div><input id="input-city" class="border border-dark form-control m-1 mt-2" placeholder="City"></div>
+            <div><button id="submit-btn" class=" btn btn-primary form-control m-1 mt-2">Submit</button></div>
         </div>
 
 
-        <div class="col-9 border border-dark">
-            <div>
-                <span class="fs-2 fw-bold">Atlanta</span>
-                <div class="mb-3">Temp: </div>
-                <div class="mb-3">Wind: </div>
-                <div class="mb-3">Humitity: </div>
+        <div class="col-9">
+            <div class="border border-dark p-2">
+                <div id="city" class="fs-2 fw-bold"><span><img id="icon" alt="weather icon"></span></div>
+                <div class="mb-3">Temp: <span id="current-temp"></span>°F</div>
+                <div class="mb-3">Wind: <span id="current-wind"></span> MPH</div>
+                <div class="mb-3">Humidity: <span id="current-humidity">%</span></div>
             </div>
             <div class="row gap-3">
-                <div>5-Day Forcast:</div>
+                <div class="fs-3 fw-bold">5-Day Forcast:</div>
                 
                     <div class="col border border-dark bg-primary">
-                        <div>Day 1</div>
-                        <div>Emoji</div>
-                        <div class="m6">Temp: </div>
-                        <div class="m2">Wind: </div>
-                        <div class="m2">Humitity: </div>
+                        <div class="mb-2">Day 1</div>
+                        <div class="mb-2">Emoji</div>
+                        <div class="mb-2">Temp: </div>
+                        <div class="mb-2">Wind: </div>
+                        <div class="mb-2">Humidity: </div>
                     </div>
-                    <div class="col border border-dark bg-primary">Day 2
-                        <div>Emoji</div>
-                        <div class="m-6">Temp: </div>
-                        <div class="m2">Wind: </div>
-                        <div class="m2">Humitity: </div>
+                    <div class="col border border-dark bg-primary">
+                        <div class="mb-2">Day 2</div>
+                        <div class="mb-2">Emoji</div>
+                        <div class="mb-2">Temp: </div>
+                        <div class="mb-2">Wind: </div>
+                        <div class="mb-2">Humidity: </div>
                     </div>
-                    <div class="col border border-dark bg-primary">Day 3
-                        <div>Emoji</div>
-                        <div class="m6">Temp: </div>
-                        <div class="m2">Wind: </div>
-                        <div class="m2">Humitity: </div>
+                    <div class="col border border-dark bg-primary">
+                        <div class="mb-2">Day 3</div>
+                        <div class="mb-2">Emoji</div>
+                        <div class="mb-2">Temp: </div>
+                        <div class="mb-2">Wind: </div>
+                        <div class="mb-2">Humidity: </div>
                     </div>
-                    <div class="col border border-dark bg-primary">Day 4
-                        <div>Emoji</div>
-                        <div class="m6">Temp: </div>
-                        <div class="m2">Wind: </div>
-                        <div class="m2">Humitity: </div>
+                    <div class="col border border-dark bg-primary">
+                        <div class="mb-2">Day 4</div>
+                        <div class="mb-2">Emoji</div>
+                        <div class="mb-2">Temp: </div>
+                        <div class="mb-2">Wind: </div>
+                        <div class="mb-2">Humidity: </div>
                     </div>
-                    <div class="col border border-dark bg-primary">Day 5
-                        <div>Emoji</div>
-                        <div class="m6">Temp: </div>
-                        <div class="m2">Wind: </div>
-                        <div class="m2">Humitity: </div>
+                    <div class="col border border-dark bg-primary">
+                        <div class="mb-2">Day 5</div>
+                        <div class="mb-2">Emoji</div>
+                        <div class="mb-2">Temp: </div>
+                        <div class="mb-2">Wind: </div>
+                        <div class="mb-2">Humidity: </div>
                     </div>
                
             </div>
@@ -75,7 +79,7 @@
 
 
 
-
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
