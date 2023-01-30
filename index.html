@@ -22,53 +22,57 @@
             <div class="fs-3 fw-bold">Search for a City:</div>
             <div><input id="input-city" class="border border-dark form-control m-1 mt-2" placeholder="City"></div>
             <div><button id="submit-btn" class=" btn btn-primary form-control m-1 mt-2">Submit</button></div>
+            <hr class="solid">
+            <div id="saved-cities">
+                
+            </div>
         </div>
 
 
         <div class="col-9">
             <div class="border border-dark p-2">
                 <div><span id="city" class="fs-2 fw-bold"></span><span><img id="icon" src="" alt="weather icon"></span></div>
-                <div class="mb-3">Temp: <span id="current-temp"></span>°F</div>
-                <div class="mb-3">Wind: <span id="current-wind"></span> MPH</div>
+                <div class="mb-3">Temp: <span id="current-temp"></span></div>
+                <div class="mb-3">Wind: <span id="current-wind"></span></div>
                 <div class="mb-3">Humidity: <span id="current-humidity"></span></div>
             </div>
             <div class="row gap-3">
                 <div class="fs-3 fw-bold">5-Day Forcast:</div>
                 
-                    <div class="col border border-dark bg-primary">
-                        <div class="mb-2">Day 1</div>
-                        <div class="mb-2">Emoji</div>
-                        <div class="mb-2">Temp: </div>
-                        <div class="mb-2">Wind: </div>
-                        <div class="mb-2">Humidity: </div>
+                    <div class="col border border-dark bg-primary ">
+                        <div id="day1" class="mb-2">Day 1</div>
+                        <div class="mb-2"><img id="forcast-icon1" src="" alt="weather icon"></div>
+                        <div id="forcast-temp1" class="mb-2">Temp: </div>
+                        <div id="forcast-wind1" class="mb-2">Wind: </div>
+                        <div id="forcast-humidity1" class="mb-2">Humidity: </div>
                     </div>
-                    <div class="col border border-dark bg-primary">
-                        <div class="mb-2">Day 2</div>
-                        <div class="mb-2">Emoji</div>
-                        <div class="mb-2">Temp: </div>
-                        <div class="mb-2">Wind: </div>
-                        <div class="mb-2">Humidity: </div>
+                    <div class="col border border-dark bg-primary ">
+                        <div id="day9" class="mb-2">Day 2</div>
+                        <div class="mb-2"><img id="forcast-icon9" src="" alt="weather icon"></div>
+                        <div id="forcast-temp9" class="mb-2">Temp: </div>
+                        <div id="forcast-wind9" class="mb-2">Wind: </div>
+                        <div id="forcast-humidity9" class="mb-2">Humidity: </div>
                     </div>
-                    <div class="col border border-dark bg-primary">
-                        <div class="mb-2">Day 3</div>
-                        <div class="mb-2">Emoji</div>
-                        <div class="mb-2">Temp: </div>
-                        <div class="mb-2">Wind: </div>
-                        <div class="mb-2">Humidity: </div>
+                    <div class="col border border-dark bg-primary ">
+                        <div id="day17" class="mb-2">Day 3</div>
+                        <div class="mb-2"><img id="forcast-icon17" src="" alt="weather icon"></div>
+                        <div id="forcast-temp17" class="mb-2">Temp: </div>
+                        <div id="forcast-wind17" class="mb-2">Wind: </div>
+                        <div id="forcast-humidity17" class="mb-2">Humidity: </div>
                     </div>
-                    <div class="col border border-dark bg-primary">
-                        <div class="mb-2">Day 4</div>
-                        <div class="mb-2">Emoji</div>
-                        <div class="mb-2">Temp: </div>
-                        <div class="mb-2">Wind: </div>
-                        <div class="mb-2">Humidity: </div>
+                    <div class="col border border-dark bg-primary ">
+                        <div id="day25" class="mb-2">Day 4</div>
+                        <div class="mb-2"><img id="forcast-icon25" src="" alt="weather icon"></div>
+                        <div id="forcast-temp25" class="mb-2">Temp: </div>
+                        <div id="forcast-wind25" class="mb-2">Wind: </div>
+                        <div id="forcast-humidity25" class="mb-2">Humidity: </div>
                     </div>
-                    <div class="col border border-dark bg-primary">
-                        <div class="mb-2">Day 5</div>
-                        <div class="mb-2">Emoji</div>
-                        <div class="mb-2">Temp: </div>
-                        <div class="mb-2">Wind: </div>
-                        <div class="mb-2">Humidity: </div>
+                    <div class="col border border-dark bg-primary ">
+                        <div id="day33" class="mb-2">Day 5</div>
+                        <div class="mb-2"><img id="forcast-icon33" src="" alt="weather icon"></div>
+                        <div id="forcast-temp33" class="mb-2">Temp: </div>
+                        <div id="forcast-wind33" class="mb-2">Wind: </div>
+                        <div id="forcast-humidity33" class="mb-2">Humidity: </div>
                     </div>
                
             </div>
