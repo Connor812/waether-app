@@ -19,7 +19,7 @@ init();
 submitButton.on('click', function (event) {
     place = $('#input-city').val();
     places.push(place);
-    savedButton = `<div><button data-language="${place}" class="btn btn-primary form-control m-1 mt-2">${place}</button></div>`
+    savedButton = `<div id="${place}"><button data-language="${place}" class="btn btn-primary form-control m-1 mt-2">${place}</button></div>`
     $('#saved-cities').append(savedButton);
     localStorage.setItem('places', JSON.stringify(places));
     getLocationUrl();
@@ -33,13 +33,19 @@ list.on('click', function (event) {
 
 function init() {
     savedCities = JSON.parse(localStorage.getItem('places'));
-    places = savedCities;
+    if (savedCities == null) {
+        places = [];
+    } else {
+        places = savedCities;
+        if (savedCities.length > 0) {
+            for (let l = 0; l < savedCities.length; l++) {
+                savedButton = `<div><button data-language="${savedCities[l]}" class="btn btn-primary form-control m-1 mt-2">${savedCities[l]}</button></div>`
+                $('#saved-cities').append(savedButton);
+            }
+        }
+    }
     console.log(savedCities);
 
-    for (let l = 0; l < savedCities.length; l++) {
-        savedButton = `<div><button data-language="${savedCities[l]}" class="btn btn-primary form-control m-1 mt-2">${savedCities[l]}</button></div>`
-        $('#saved-cities').append(savedButton);
-    }
 }
 
 function getLocationUrl() {
@@ -52,8 +58,18 @@ function getLocationUrl() {
             return locationResponse.json();
         })
         .then(function (locationData) {
-            console.log(locationData);
-
+            console.log(locationData.length);
+            if (locationData == 0) {
+                deleteButton = document.getElementById(place);
+                deleteButton.remove();
+                savedCities = JSON.parse(localStorage.getItem('places'));
+                savedCitiesReturn = savedCities.filter(item => item !== place);
+                newPlaces = places.filter(item => item !== place);
+                places = newPlaces;
+                localStorage.setItem('places', JSON.stringify(savedCitiesReturn));
+                alert("Invalid city please try again");
+                return;
+            }
             lat = locationData[0].lat;
             lon = locationData[0].lon;
             console.log(lat);
