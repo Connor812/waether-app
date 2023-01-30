@@ -6,6 +6,7 @@ let currentWind = $('#current-wind');
 let currentHumidity = $('#current-humidity');
 let list = $('#saved-cities');
 let places = [];
+let savedButton
 let savedCities;
 let weatherUrl;
 let locationUrl;
@@ -13,26 +14,33 @@ let lan;
 let lon;
 let day;
 
-submitButton.on('click', function(event) {
+init();
+
+submitButton.on('click', function (event) {
     place = $('#input-city').val();
     places.push(place);
+    savedButton = `<div><button data-language="${place}" class="btn btn-primary form-control m-1 mt-2">${place}</button></div>`
+    $('#saved-cities').append(savedButton);
     localStorage.setItem('places', JSON.stringify(places));
+    getLocationUrl();
+})
+
+list.on('click', function (event) {
+    place = event.target.getAttribute('data-language');
+    console.log(place);
     getLocationUrl();
 })
 
 function init() {
     savedCities = JSON.parse(localStorage.getItem('places'));
+    places = savedCities;
     console.log(savedCities);
-    
+
     for (let l = 0; l < savedCities.length; l++) {
-        let savedButton = `<div><button class=" btn btn-primary form-control m-1 mt-2">${savedCities[l]}</button></div>`
+        savedButton = `<div><button data-language="${savedCities[l]}" class="btn btn-primary form-control m-1 mt-2">${savedCities[l]}</button></div>`
         $('#saved-cities').append(savedButton);
     }
 }
-
-init();
-
-
 
 function getLocationUrl() {
 
@@ -67,13 +75,13 @@ function getCurrentWeatherUrl() {
         .then(function (currentWeatherData) {
 
             console.log(currentWeatherData);
-            $('#city').text(currentWeatherData.name); 
+            $('#city').text(currentWeatherData.name);
             let weatherIcon = "http://openweathermap.org/img/w/" + currentWeatherData.weather[0].icon + ".png";
             $('#icon').attr('src', weatherIcon);
             $('#current-temp').text(currentWeatherData.main.temp + "°F");
             $('#current-wind').text(currentWeatherData.wind.speed + " MPH");
-            $('#current-humidity').text(currentWeatherData.main.humidity + "%");            
-        
+            $('#current-humidity').text(currentWeatherData.main.humidity + "%");
+
         })
 }
 
@@ -93,7 +101,7 @@ function getWeatherUrl() {
         .then(function (weatherData) {
 
             console.log(weatherData);
-            
+
             days = weatherData.list;
             console.log(days);
             renderForcast()
@@ -104,19 +112,15 @@ function getWeatherUrl() {
 
 function renderForcast() {
 
-
-
-
-
     for (let i = 1; i < days.length;) {
-       
-    $('#day' + i).text(days[i].dt_txt);
-    let iconUrl = "http://openweathermap.org/img/w/" + days[i].weather[0].icon + ".png";
-    console.log(iconUrl);
-    $('#forcast-icon' + i).attr('src', iconUrl);
-    $('#forcast-temp' + i).text(`Temp: ${days[i].main.temp}°F`);
-    $('#forcast-wind' + i).text(`Wind: ${days[i].wind.speed} MPH`);
-    $('#forcast-humidity' + i).text(`Humidity: ${days[i].main.humidity}%`);
+
+        $('#day' + i).text(days[i].dt_txt);
+        let iconUrl = "http://openweathermap.org/img/w/" + days[i].weather[0].icon + ".png";
+        console.log(iconUrl);
+        $('#forcast-icon' + i).attr('src', iconUrl);
+        $('#forcast-temp' + i).text(`Temp: ${days[i].main.temp}°F`);
+        $('#forcast-wind' + i).text(`Wind: ${days[i].wind.speed} MPH`);
+        $('#forcast-humidity' + i).text(`Humidity: ${days[i].main.humidity}%`);
         console.log(days[i].main.humidity);
         console.log(i);
         console.log(days[i]);
