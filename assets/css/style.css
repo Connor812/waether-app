@@ -2,3 +2,7 @@
     background: rgb(0, 137, 196);
     background: linear-gradient(90deg, rgba(0, 137, 196, 1) 10%, rgba(0, 7, 163, 1) 55%, rgba(5, 0, 91, 1) 100%);
 }
+
+.hide {
+    display: none;
+}
