@@ -2,16 +2,16 @@
 
 ## Description
 
-```
+
 This app allows you to search for a city, and it will display the current weather for that city as well and the forcast for the next 5 days. It will also store you're previous searches in your local storage so you can look at them again.
-```
+
 
 ## Table of Contents
 - Where to find
 - How to use
 - Credits
 - License
--Screenshot
+- Screenshot
 
 ## Where to find
 
