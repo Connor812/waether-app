@@ -104,7 +104,7 @@ function getCurrentWeatherUrl() {
 
             console.log(currentWeatherData);
             $('#city').text(currentWeatherData.name + currentDate);
-            let weatherIcon = "http://openweathermap.org/img/w/" + currentWeatherData.weather[0].icon + ".png";
+            let weatherIcon = "https://openweathermap.org/img/w/" + currentWeatherData.weather[0].icon + ".png";
             $('#icon').attr('src', weatherIcon);
             $('#current-temp').text(currentWeatherData.main.temp + "°F");
             $('#current-wind').text(currentWeatherData.wind.speed + " MPH");
