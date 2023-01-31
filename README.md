@@ -27,7 +27,8 @@ This application was designed by Connor with the help of the API OpenWeather web
 
 ## License
 
-
+GNU GENERAL PUBLIC LICENSE
+Version 3, 29 June 2007
 
 ## Screenshot
 

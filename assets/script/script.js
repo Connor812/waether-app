@@ -62,7 +62,7 @@ function init() {
 
 function getLocationUrl() {
     $('#show-weather').removeClass('hide');
-    locationUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + place + '&limit=10&appid=2ca1c9e6889192710f3b59dc0b31f2bf';
+    locationUrl = 'https://api.openweathermap.org/geo/1.0/direct?q=' + place + '&limit=10&appid=2ca1c9e6889192710f3b59dc0b31f2bf';
     console.log(locationUrl);
 
     fetch(locationUrl)
@@ -147,7 +147,7 @@ function renderForcast() {
 
 
         $('#day' + i).text(forcastDate);
-        let iconUrl = "http://openweathermap.org/img/w/" + days[i].weather[0].icon + ".png";
+        let iconUrl = "https://openweathermap.org/img/w/" + days[i].weather[0].icon + ".png";
         console.log(iconUrl);
         $('#forcast-icon' + i).attr('src', iconUrl);
         $('#forcast-temp' + i).text(`Temp: ${days[i].main.temp}°F`);
